@@ -3,7 +3,6 @@ import { useDataProvider } from "../hooks/DataProvider";
 import BookShelf from "./BookShelf";
 
 const Categories = () => {
-  console.log("Categories render");
   const { allBooks, shelfs } = useDataProvider();
 
   return (

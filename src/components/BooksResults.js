@@ -3,21 +3,21 @@ import { useDataProvider } from "../hooks/DataProvider";
 import Book from "./Book";
 
 const BooksResults = () => {
-  console.log("BooksResults rendered");
   const { booksSearhResult } = useDataProvider();
-  //console.log(booksSearhResult);
+  console.log(booksSearhResult);
+
+  const content =
+    booksSearhResult === null
+      ? "No data for your searching"
+      : booksSearhResult.map((book, index) => (
+          <li key={index}>
+            <Book book={book}></Book>
+          </li>
+        ));
 
   return (
     <div className="search-books-results">
-      Book Result
-      <ol className="books-grid">
-        {/* {booksSearhResult &&
-          booksSearhResult.map((book, index) => (
-            <li key={index}>
-              <Book book={book}></Book>
-            </li>
-          ))} */}
-      </ol>
+      <ol className="books-grid">{content}</ol>
     </div>
   );
 };
