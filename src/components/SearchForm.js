@@ -6,8 +6,6 @@ const SearchForm = () => {
   const { handleSearchBook } = useDataProvider();
 
   const handleSearch = (e) => {
-    if (e.target.value === "") return;
-
     handleSearchBook(e.target.value);
   };
 
