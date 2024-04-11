@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDataProvider } from "../hooks/DataProvider";
 
 const Book = ({ book }) => {
-  const { shelfs, handleShelfBook } = useDataProvider();
+  const { handleShelfBook } = useDataProvider();
   const [selectedOption, setSelectedOption] = useState(book.shelf);
 
   const handleSelectedChange = (e) => {
@@ -25,11 +25,9 @@ const Book = ({ book }) => {
             <option value="none" disabled>
               Move to...
             </option>
-            {shelfs.map((shelf, index) => (
-              <option key={index} value={shelf.id}>
-                {shelf.value}
-              </option>
-            ))}
+            <option value="currentlyReading">Currently Reading</option>
+            <option value="wantToRead">Want to Read</option>
+            <option value="read">Read</option>
             <option value="none">None</option>
           </select>
         </div>

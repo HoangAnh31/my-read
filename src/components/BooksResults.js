@@ -4,7 +4,6 @@ import Book from "./Book";
 
 const BooksResults = () => {
   const { booksSearhResult } = useDataProvider();
-  console.log(booksSearhResult);
 
   const content =
     booksSearhResult === null

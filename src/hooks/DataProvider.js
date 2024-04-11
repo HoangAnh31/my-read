@@ -10,21 +10,22 @@ import * as BooksAPI from "../BooksAPI";
 //Create a context for the data provider
 const DataProviderContext = createContext();
 
-const shelfs = [
-  { id: "currentlyReading", value: "Currently Reading" },
-  { id: "wantToRead", value: "Want to Read" },
-  { id: "read", value: "Read" },
+const shelfsInitial = [
+  { id: "currentlyReading", value: "Currently Reading", arrBooks: [] },
+  { id: "wantToRead", value: "Want to Read", arrBooks: [] },
+  { id: "read", value: "Read", arrBooks: [] },
 ];
 
 //Data provider component
 export const DataProvider = ({ children }) => {
-  const [allBooks, setAllBooks] = useState([]);
+  const [shelfs, setShelfs] = useState(shelfsInitial);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [booksSearhResult, setBooksSearchResult] = useState(null);
 
   const handleShelfBook = useCallback(async (book, shelf) => {
     await BooksAPI.update(book, shelf);
+    fetchData();
   }, []);
 
   const handleSearchBook = useCallback(async (inputStr) => {
@@ -37,7 +38,7 @@ export const DataProvider = ({ children }) => {
 
       setBooksSearchResult(dataResult);
     } catch (error) {
-      console.log("Search API error: ", error);
+      //console.log("Search API error: ", error);
       setBooksSearchResult(null);
     }
   }, []);
@@ -47,7 +48,14 @@ export const DataProvider = ({ children }) => {
     try {
       //stimulated API call -> get all books
       const data = await BooksAPI.getAll();
-      setAllBooks(data);
+
+      // Update shelfs with books
+      const updatedShelfs = shelfsInitial.map((shelf) => ({
+        ...shelf,
+        arrBooks: data.filter((book) => book.shelf === shelf.id),
+      }));
+
+      setShelfs(updatedShelfs);
     } catch (error) {
       setError(error);
     } finally {
@@ -58,12 +66,11 @@ export const DataProvider = ({ children }) => {
   //fetch data when component mount
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return (
     <DataProviderContext.Provider
       value={{
-        allBooks,
         shelfs,
         booksSearhResult,
         isLoading,
