@@ -10,8 +10,8 @@ function App() {
       <DataProvider>
         <div className="app">
           <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
-            <Route path="/search" element={<Search></Search>}></Route>
+            <Route path="/my-read/" element={<Home></Home>}></Route>
+            <Route path="/my-read/search" element={<Search></Search>}></Route>
           </Routes>
         </div>
       </DataProvider>

@@ -13,7 +13,7 @@ const SearchForm = () => {
 
   return (
     <div className="search-books-bar">
-      <Link className="close-search" to="/">
+      <Link className="close-search" to="/my-read/">
         Close
       </Link>
       <div className="search-books-input-wrapper">
