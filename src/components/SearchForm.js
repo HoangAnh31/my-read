@@ -11,9 +11,13 @@ const SearchForm = () => {
     handleSearchBook(e.target.value);
   };
 
+  const clearSearch = () => {
+    handleSearch("");
+  };
+
   return (
     <div className="search-books-bar">
-      <Link className="close-search" to="/my-read/">
+      <Link className="close-search" to="/my-read/" onClick={clearSearch}>
         Close
       </Link>
       <div className="search-books-input-wrapper">
