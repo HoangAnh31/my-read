@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.810b381d.css",
-    "main.js": "/static/js/main.44724e02.js",
-    "index.html": "/index.html",
-    "static/media/arrow-back.svg": "/static/media/arrow-back.cd079cab42defead9875.svg",
-    "static/media/add.svg": "/static/media/add.1b5d9b6afb5557f7992c.svg",
-    "static/media/arrow-drop-down.svg": "/static/media/arrow-drop-down.4378492a3a09dbfc31ff.svg",
-    "main.810b381d.css.map": "/static/css/main.810b381d.css.map",
-    "main.44724e02.js.map": "/static/js/main.44724e02.js.map"
+    "main.css": "/my-read/static/css/main.9315fd8a.css",
+    "main.js": "/my-read/static/js/main.b7abfdf3.js",
+    "index.html": "/my-read/index.html",
+    "static/media/arrow-back.svg": "/my-read/static/media/arrow-back.cd079cab42defead9875.svg",
+    "static/media/add.svg": "/my-read/static/media/add.1b5d9b6afb5557f7992c.svg",
+    "static/media/arrow-drop-down.svg": "/my-read/static/media/arrow-drop-down.4378492a3a09dbfc31ff.svg",
+    "main.9315fd8a.css.map": "/my-read/static/css/main.9315fd8a.css.map",
+    "main.b7abfdf3.js.map": "/my-read/static/js/main.b7abfdf3.js.map"
   },
   "entrypoints": [
-    "static/css/main.810b381d.css",
-    "static/js/main.44724e02.js"
+    "static/css/main.9315fd8a.css",
+    "static/js/main.b7abfdf3.js"
   ]
 }
